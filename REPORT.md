@@ -17,8 +17,7 @@ pesan : validasi tahun
 perubahan : mengubah p->tahun<0 menjadi p->tahun<=0, karena biasanya nasabah menabung minimal 1 tahun dan tidak boleh 0 atau negatif
 
 -----------------------------------------------------------------------------------------------
-#Penjelasan Program
-program ini digunakan untuk menghitung bunga tabungan dengan dua tipe perhitungan: Bunga Sederhana dan Bunga Majemuk. Program ini dirancang untuk menerima data dari beberapa nasabah dan kemudian menampilkan perhitungan bunga untuk setiap nasabah.
+##Penjelasan Program program ini digunakan untuk menghitung bunga tabungan dengan dua tipe perhitungan: Bunga Sederhana dan Bunga Majemuk. Program ini dirancang untuk menerima data dari beberapa nasabah dan kemudian menampilkan perhitungan bunga untuk setiap nasabah.
 -----------------------------------------------------------------------------------------------
 #input dan output
 ##input
