@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 
 typedef enum { SIMPLE = 1, COMPOUND = 2 } InterestType;
@@ -13,7 +14,7 @@ typedef struct {
     int    tahun;        // lama menabung (tahun)
     int    n_per_tahun;  // frekuensi kapitalisasi per tahun (untuk majemuk)
     InterestType tipe;   // SIMPLE atau COMPOUND (sederhana atau majemuk)
-} Rekenin;
+} Rekening;
 
 double total_simple(const Rekening *r) {
     return r->pokok + r->pokok * r->rate * r->tahun;
@@ -84,7 +85,9 @@ int main(void) {
         p->rate = rate_percent / 100.0;
 
         printf("Lama menabung (tahun): ");
-        if (scanf("%d", &p->tahun) != 1 || p->tahun < 0) {
+        if (scanf("%d", &p->tahun) != 1 || p->tahun <= 0) {
+            
+
             fprintf(stderr, "Input tahun tidak valid.\n");
             free(arr);
             return 1;
@@ -96,7 +99,7 @@ int main(void) {
             free(arr);
             return 1;
         }
-        p->tipe = (tipe == 1) ? SIMPL : COMPOUND;
+        p->tipe = (tipe == 1) ? SIMPLE : COMPOUND;
 
         if (p->tipe == COMPOUND) {
             printf("Frekuensi kapitalisasi per tahun (mis. 12 untuk bulanan): ");
