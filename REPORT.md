@@ -37,7 +37,7 @@ Program menerima input berupa data nasabah, termasuk:
 digunakan untuk menentukan jenis bunga yang digunakan.
 
 typdef enum { SIMPLE = 1, COMPOUND = 2 } InterestType;
-# Struct: Rekening
+# 2. Struct: Rekening
 Menyimpan data lengkap dari nasabah
 typedef struct {
     char nama[64];
@@ -48,9 +48,7 @@ typedef struct {
     InterestType tipe;
 } Rekening;
 
-# 3. 
-
-# 4. Fungsi total_simple()
+# 3. Fungsi total_simple()
 Fungsi total_simple()
 
 Menghitung total akhir tabungan untuk bunga sederhana.
@@ -62,7 +60,7 @@ double total_simple(const Rekening *r) {
     int n = (r->n_per_tahun > 0) ? r->n_per_tahun : 1;
     return r->pokok * pow(1.0 + r->rate / n, (double)(n * r->tahun));
 }
-# Fungsi cetak_ringkasan()
+# 5. Fungsi cetak_ringkasan()
 
 Menampilkan ringkasan hasil perhitungan untuk tiap nasabah.
 void cetak_ringkasan(const Rekening *r) {
@@ -83,5 +81,19 @@ void cetak_ringkasan(const Rekening *r) {
     printf("Total Bunga        : Rp %.2f\n", bunga);
     printf("Total Akhir        : Rp %.2f\n", total);
 }
-(image.png)
-(image-1.png)
+
+Berikut adalah contoh input dan outputnya  
+Masukkan jumlah nasabah: 1  
+
+=== Data Nasabah 1 ===  
+Nama lengkap: Auryn Maheswari  
+Jumlah pokok (Rp): 10000  
+Suku bunga per tahun (%), mis. 5 untuk 5%: 5 majemuk): 1  
+--- Ringkasan Rekening ---  
+Nama               : Auryn Maheswari  
+Pokok              : Rp 10000.00      
+Suku Bunga (%/thn) : 5.00%  
+Lama (tahun)       : 2  
+Tipe               : Bunga Sederhana  
+Total Bunga        : Rp 1000.00       
+Total Akhir        : Rp 11000.00  
